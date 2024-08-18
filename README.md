@@ -18,7 +18,7 @@ The H2M.exe tool reaches out to github to make sure it's the latest version of i
 
 The tool then fetches the latest server list available at [master.iw4.zip](https://master.iw4.zip/servers) and writes them to the favorites.json located in your player folder that can be viewed in the client by clicking "Filter Servers" to set your source to "Favorites". If you're seeing 0 Players and 0 Servers online with your source set to "Internet", good, you're not supposed to.
 
-Upon finishing these two tasks, the tool will run your h2m-mod.exe as normal and close itself. It doesn't need to install anything, run in the background, or act as a replacement for/interact with any game files in any way. 
+Upon finishing these two tasks, the tool will run your h2m-mod.exe as normal and close itself. It doesn't need to install anything, run in the background, or act as a replacement for/interact with any game files in any way (meaning if anything breaks after it closes itself, that's on whatever you've got going on). 
 
 # Compiling from source
 While the releases are binaries that have been precompiled so they require no outside installs and can be ran on any machine with no technical knowledge required, this is still an open source project. If you don't trust the precompiled binaries, I added a .bat file that will let you easily clone the repo and compile it yourself to make sure the code you're seeing is the code that's running on your machine (you'll obviously need to install python as well as any dependancies yourself). If you're on Linux (I saw you, Steamdeck users) and managed to get h2m working, I trust that you probably know how to run a python script and don't need anything compiled at all.
