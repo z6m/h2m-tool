@@ -5,6 +5,8 @@ Designed for the now defunct h2m-mod for Call of Duty Modern Warfare Remastered.
 
 IMPORTANT: Just because your build of the game is clean doesn't necessarily mean you're 100% safe. Some packages containing the files are known to have additional .msi or .exe files that present themselves as installers for a "launcher". This launcher no longer exists, as the team is no longer continuing the project and their distribution channels have been shut down. The launcher itself is unnecessary to actually running the mod as it is, and any of them that are packed in with the mod files should be treated as malware (as well as any similar executables beyond h2m-mod.exe, which this project is meant to validate). 
 
+ALSO IMPORTANT: This is an unsigned executable that reaches out to external servers (github for update checking, iw4.zip for server listings), so an antivirus will probably warn you or quarantine it or something. That tends to happen. You can either allow it through or look over my spaghetti code and compile it yourself.
+
 
 # Setup
 Go the the [releases](https://github.com/z6m/h2m-tool/releases) tab, download the latest release, drop it in whatever folder you have your h2m-mod.exe files, and make a shortcut of it that you can put on your desktop if you want. Then you can just treat it like any game shortcut and it will do it's thing.
