@@ -10,7 +10,7 @@ import subprocess
 import hashlib
 
 if __name__ == '__main__':
-    colorama.init(autoreset=True)
+    colorama.init()
 
     # Version info
     version_name = "good enough edition"
@@ -19,21 +19,22 @@ if __name__ == '__main__':
 
     client = 'h2m-mod.exe'
 
-    # Check version
-    try:
-        response = requests.get("https://api.github.com/repos/z6m/serverfetcher/releases/latest")
-        latest_version = response.json()["tag_name"]
-        if latest_version != version_tag:
-            print(Fore.RED + Style.BRIGHT + "[*] A new version is out\n"
-                "[*] Download it here: " + "https://github.com/z6m/serverfetcher/releases/latest\n")
-    except:
-        print(Fore.RED + Style.BRIGHT + "[!] Rate limit exceeded, skipping update check \n")
-
-    # Header
-    header = pyfiglet.figlet_format("zom's funny server fetcher", font='chunky')
-    print(Fore.GREEN + Style.BRIGHT + header + '[' + version_name + '] ' + Fore.WHITE + version_tag + "\n \n"
-            + Fore.GREEN + Style.BRIGHT + "https://github.com/z6m/serverfetcher \n" + Fore.WHITE + "Download from this repo yourself, close this if someone just sent you the file \n" 
-            + Fore.GREEN + Style.BRIGHT + spacer + Fore.WHITE)
+    def check_version():
+        # Header
+        header = pyfiglet.figlet_format("zom's funny server fetcher", font='chunky')
+        print(Fore.GREEN + Style.BRIGHT + header + '[' + version_name + '] ' + Fore.WHITE + version_tag + "\n \n"
+                + Fore.GREEN + Style.BRIGHT + "https://github.com/z6m/h2m-tool \n" + Fore.WHITE + "Download from this repo yourself, close this if someone just sent you the file \n" 
+                + Fore.GREEN + Style.BRIGHT + spacer + Fore.WHITE)
+                
+        try:
+            response = requests.get("https://api.github.com/repos/z6m/h2m-tool/releases/latest")
+            latest_version = response.json()["tag_name"]
+            if latest_version != version_tag:
+                print(Fore.RED + Style.BRIGHT + "[!] A new version is out\n"
+                    "[!] Download it here: " + "https://github.com/z6m/h2m-tool/releases/latest\n")
+                input("[*] Press ENTER to ignore and continue...")
+        except:
+            print(Fore.RED + Style.BRIGHT + "[!] Rate limit exceeded, skipping update check \n")
 
     
 
@@ -107,6 +108,7 @@ if __name__ == '__main__':
         
     # Run
     def run():
+        check_version()
         if os.path.isfile(client) == False:
             input(Fore.RED + Style.BRIGHT + "[!] Move me into your game folder next to your h2m-mod.exe")
         else:
