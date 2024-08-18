@@ -9,7 +9,13 @@ ALSO IMPORTANT: This is an unsigned executable that reaches out to external serv
 
 
 # Setup
-Go the the [releases](https://github.com/z6m/h2m-tool/releases) tab, download the latest release, drop it in whatever folder you have your h2m-mod.exe files, and make a shortcut of it that you can put on your desktop if you want. Then you can just treat it like any game shortcut and it will do it's thing.
+1. Go the the [releases](https://github.com/z6m/h2m-tool/releases) tab
+2. Download the latest release (the .exe)
+3. Drop it in whatever folder you have your h2m-mod.exe files
+4. Make a shortcut of it that you can put on your desktop if you want
+5. You are done
+
+Run it instead of the h2m-mod.exe if you always want your servers updated.
 
 # What it actually does
 The H2M.exe tool reaches out to github to make sure it's the latest version of itself, then validates the hash of your binary. 
