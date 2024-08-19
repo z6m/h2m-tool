@@ -47,24 +47,29 @@ The game itself only lets you have 100 servers visible in the browser, even when
 
 # FAQ regarding H2M itself
 
-    "Will this tool give me the mod files?"
+## "Will this tool give me the mod files?"
 No, this tool is for validation and easy access to a "functioning" server list without modifying any original binaries. This repo contains no copyrighted assets and is purely code written by its contributor(s).
 
-    "Will YOU give me mod files?"
+
+## "Will YOU give me mod files?"
 No, I would much rather be able to continue helping people without risking getting any of my stuff suspended or getting a C&D of my own and being legally prevented from doing so. I have only ever directly given out mod files before the C&D to my fellow early access gamers or to the people helping me with security research. You can probably find that stuff floating around somewhere. It's a 2.2-2.4gb zip with no maps included, might even have my name in the game logs from when I was playing during early access, hash ends in e33e, check the hashes before running any executable.
 
-    "I have the old build, am I cooked? What features am I missing?"
-No, you're probably fine. Would get the new one if you can. And I have no idea exactly what features are missing; I wasn't on the H2M team itself, hence why I'm able to talk about it and help people. The mod was recieveing multiple updates throughout the day involving tweaks to game feel (particularly regarding glides, catwalks, and other associated mechanics). I have no way of knowing exactly what was in each individual build, I just happened to catch the latest one before they shut down the update channel to try to suppress leaks. 
 
-    "Virustotal says the safe build/this tool contains wacatac/wacapew/some other trojan"
+## "I have the old build, am I cooked? What features am I missing?"
+No, you're probably fine. Would get the new one if you can. And I have no idea exactly what features are missing; I wasn't on the H2M team itself, hence why I'm able to talk about it and help people. The mod was recieveing multiple updates throughout the day involving tweaks to game feel (particularly regarding glides, catwalks, and other associated mechanics). I have no way of knowing exactly what was in each individual build, I just happened to catch the latest one before they shut down the update channel to try to suppress leaks.
+
+
+## "Virustotal says the safe build/this tool contains wacatac/wacapew/some other trojan"
 Virustotal/similar AV products are doing behavioral analysis based on what the file does in a vaccuum. "h2m-mod.exe", even the clean version, reaches out to an external server that does not exist anymore (the h2m-mod.dev update server that got shut down) and modifies registry keys related to the game. My tool reaches out to github/master.iw4.zip to check for updates to the version/fetch servers. These are all necessary things the programs would inherently need to do to fulfill their intended purposes and will trigger false positives in behavioral testing as these executables are either unsigned or self-signed meaning they have no inherent trust from any platform.  
 
-    "I got my exe from __________'s server, who are the new official team for H2M"
+
+## "I got my exe from __________'s server, who are the new official team for H2M"
 There is no new "official" team for H2M, just collectives of various random people trying to fill the vacuum that was made after the team disbanded. These are often loosely formed groups scrambling to establish themselves as fast as possible. Some of them are probably legitimately trying to build on the project, some of them also see a free program with no official distribution channel that a ton of people want and will take advantage of that; both are equally likely with any tampered build you download. 
 
 The purpose of this tool is to providea the functionality those builds are offering without the need to actually modify the binary itself so no trust in an outside party is required and there's never a question as to what you're actually running. As of right now, there is no reason to use a tampered binary over a clean one with this tool. 
 
 I can't speak on any of their builds and there are [known examples](https://x.com/LeafFGC/status/1824708025908859063) of infected files going around. Until this whole the stabilizes, I wouldn't recommend running any of them and just asking them for the early access version they built off of.
 
-    I try to connect to a server but it says it's full/it puts me some other random server
+
+## "I try to connect to a server but it says it's full/it puts me some other random server"
 People are joining and filling up servers a lot faster than the game itself seems to be able to visibly update the list. Combine that with the fact that the browser itself currently only displays 100 servers at a time and that's going to happen sometimes. 
