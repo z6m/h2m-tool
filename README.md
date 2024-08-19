@@ -83,4 +83,4 @@ These are all necessary things the programs would inherently need to do to fulfi
 People are joining and filling up servers a lot faster than the game itself seems to be able to visibly update the list. Combine that with the fact that the browser itself currently only displays 100 servers at a time and that's going to happen sometimes. 
 
 <h3 align="center">"My server list is empty"</h3>
-Source from favorites instead of internet
+Make sure you ran the mod from my tool and not the h2m-mod.exe, set your source to favorites instead of internet. If you get an error fetching servers message you're probably being rate limited from all the scraping.
