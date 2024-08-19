@@ -54,7 +54,7 @@ No, this tool is for validation and easy access to a "functioning" server list w
 <h3 align="center">"Will YOU give me mod files?"</h3>
 <p>No, I would much rather be able to continue helping people without risking getting any of my stuff suspended or getting a C&D of my own and being legally prevented from doing so. I have only ever directly given out mod files before the C&D to my fellow early access gamers or to the people helping me with security research.</p>
 
-<p>You can probably find that stuff floating around somewhere. It's a 2.2-2.4gb zip with no maps included, contains "h2m-mod.exe", "h1_mp64_ship.exe", and the "h2m-mod" folder; that's it. Might even have my name in the game logs from when I was playing during early access, hash ends in e33e, check the hashes before running any executable. Game files you'll need to get elsewhere, preferably legally.</p>
+<p>That said, you can probably find that exact stuff floating around somewhere. It's a 2.2-2.4gb zip with no maps included, contains "h2m-mod.exe", "h1_mp64_ship.exe", and the "h2m-mod" folder; that's it. Might even have my name in the game logs from when I was playing during early access, hash ends in e33e, check the hashes before running any executable. Game files you'll need to get elsewhere, preferably legally.</p>
 
 <h3 align="center">"What would a working game folder look like?"</h3>
 <h6 align="center">Something like this</h6>
