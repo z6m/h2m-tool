@@ -14,7 +14,7 @@ Also, just because your build of the game is clean doesn't necessarily mean you'
 
 # Setup
 1. Go the the [releases](https://github.com/z6m/h2m-tool/releases) tab
-2. Download the latest release (the .exe)
+2. Download the latest release (the .exe, not any of the zips)
 3. Drop it in whatever folder you have your h2m-mod.exe files
 4. Make a shortcut of it that you can put on your desktop if you want
 5. You are done
@@ -71,7 +71,7 @@ Virustotal/similar AV products are doing behavioral analysis based on what the f
 
 <p>The purpose of this tool is to providea the functionality those builds are offering without the need to actually modify the binary itself so no trust in an outside party is required and there's never a question as to what you're actually running. As of right now, there is no reason to use a tampered binary over a clean one with this tool. </p>
 
-<p>I can't speak on any of their builds and there are [known examples](https://x.com/LeafFGC/status/1824708025908859063) of infected files going around. Until this whole the stabilizes, I wouldn't recommend running any of them and just asking them for the early access version they built off of.</p>
+<p>I can't speak on any of their builds and there are known examples(https://x.com/LeafFGC/status/1824708025908859063) of infected files going around. Until this whole the stabilizes, I wouldn't recommend running any of them and just asking them for the early access version they built off of.</p>
 
 <h3 align="center">"I try to connect to a server but it says it's full/it puts me some other random server"</h3>
 People are joining and filling up servers a lot faster than the game itself seems to be able to visibly update the list. Combine that with the fact that the browser itself currently only displays 100 servers at a time and that's going to happen sometimes. 
