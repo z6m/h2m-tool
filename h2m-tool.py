@@ -13,8 +13,8 @@ if __name__ == '__main__':
     colorama.init()
 
     # Version info
-    version_name = "good enough edition"
-    version_tag = 'v1.0'
+    version_name = "god save the queen edition"
+    version_tag = 'v1.1'
     spacer = "------------------------------------------------------------------------------ \n"
 
     client = 'h2m-mod.exe'
@@ -80,7 +80,7 @@ if __name__ == '__main__':
     def fetch_servers():
         print("[*] Fetching servers...")
 
-        output_file = "./players2/favorites.json"
+        output_file = "./players2/favourites.json"
         url = "https://master.iw4.zip/servers"
         
         try:
