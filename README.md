@@ -31,3 +31,6 @@ Upon finishing these two tasks, the tool will run your h2m-mod.exe as normal and
 
 # Compiling from source
 While the releases are binaries that have been precompiled so they require no outside installs and can be ran on any machine with no technical knowledge required, this is still an open source project. If you don't trust the precompiled binaries, I added a .bat file that will let you easily clone the repo and compile it yourself to make sure the code you're seeing is the code that's running on your machine (you'll obviously need to install python as well as any dependancies yourself). If you're on Linux (I saw you, Steamdeck users) and managed to get h2m working, I trust that you probably know how to run a python script and don't need anything compiled at all.
+
+# Other stuff worth nothing
+The game itself only lets you have 100 servers marked as "favorites" at a time. The tool can scrape and save way more than that, they just won't show up until you delete something (F1/Y/Triangle while hovering over a server). If you're just browsing and don't have something to directly connect to already, you can make space by sorting by ping and just deleting anything that's unplayably high.
