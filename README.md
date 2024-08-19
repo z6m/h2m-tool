@@ -69,7 +69,7 @@ Virustotal/similar AV products are doing behavioral analysis based on what the f
 <h3 align="center">"I got my exe from __________'s server, who are the new official team for H2M"</h3>
 <p>There is no new "official" team for H2M, just collectives of various random people trying to fill the vacuum that was made after the team disbanded. These are often loosely formed groups scrambling to establish themselves as fast as possible. Some of them are probably legitimately trying to build on the project, some of them also see a free program with no official distribution channel that a ton of people want and will take advantage of that; both are equally likely with any tampered build you download. </p>
 
-<p>The purpose of this tool is to providea the functionality those builds are offering without the need to actually modify the binary itself so no trust in an outside party is required and there's never a question as to what you're actually running. As of right now, there is no reason to use a tampered binary over a clean one with this tool. </p>
+<h6>The purpose of this tool is to provide the functionality those builds are offering without the need to actually modify the binary itself so no trust in an outside party is required and there's never a question as to what you're actually running. As of right now, there is no reason to use a tampered binary over a clean one with this tool. </h6>
 
 <p>I can't speak on any of their builds and there are known examples (https://x.com/LeafFGC/status/1824708025908859063) of infected files going around. Until this whole the stabilizes, I wouldn't recommend running any of them and just asking them for the early access version they built off of.</p>
 
