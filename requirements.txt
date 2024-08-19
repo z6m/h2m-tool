@@ -1,9 +1,5 @@
 beautifulsoup4==4.12.3
-certifi==2024.7.4
-charset-normalizer==3.3.2
 colorama==0.4.6
-idna==3.7
 pyfiglet==1.0.2
-requests==2.32.3
-soupsieve==2.6
-urllib3==2.2.2
+pyinstaller==6.10.0
+Requests==2.32.3
