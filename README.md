@@ -1,6 +1,6 @@
 <h1 align="center">Zom's Funny Server Fetcher</h1>
 <h6 align="center">Checks the hashes, fetches your servers, runs your game, you get the idea</h6>
-<h5 align="center">Read everything here before tweeting/dming me. I've probably already answered it</h5>
+<h5 align="center">Read EVERYTHING here before tweeting/dming me. I've probably already answered it</h5>
 
 --------------------------------------------------------------------------------------------------------------------
 
