@@ -41,7 +41,7 @@ While the releases are binaries that have been precompiled so they require no ou
 # Known issues
 The game itself only lets you have 100 servers visible in the browser, even when the source is set to internet. This seems to just be an MWR thing
 
-    Short-Term Solution: Sort by ping, go to the bottom, start deleteing favorites and watch the new servers come in
+    Short-Term Solution: Sort by ping, go to the bottom, start deleting high-ping favorites and watch the new servers come in
     Long-Term Solution: planning to refactor the script to pull the top 100 servers with the best ping
 
 
