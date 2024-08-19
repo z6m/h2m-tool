@@ -9,6 +9,7 @@ on:
       - "main"
     types:
       - "closed"
+  workflow_dispatch:
 
 jobs:
   build:
@@ -30,8 +31,13 @@ jobs:
       - name: Build Executable
         run: pyinstaller  --collect-all pyfiglet -i "logo.ico" -n H2M --onefile h2m-tool.py
 
+      - name: Commit short hash
+        id: vars
+        run: |
+          echo "SHORT_COMMIT_ID=$(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
+
       - name: Upload Release Asset
         uses: actions/upload-artifact@v4
         with:
-          name: H2M.exe
+          name: H2M-:${{ steps.vars.outputs.SHORT_COMMIT_ID }}.exe
           path: dist/H2M.exe
