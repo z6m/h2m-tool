@@ -64,7 +64,13 @@ No, this tool is for validation and easy access to a "functioning" server list w
 No, you're probably fine. Would get the new one if you can. And I have no idea exactly what features are missing; I wasn't on the H2M team itself, hence why I'm able to talk about it and help people. The mod was recieveing multiple updates throughout the day involving tweaks to game feel (particularly regarding glides, catwalks, and other associated mechanics). I have no way of knowing exactly what was in each individual build, I just happened to catch the latest one before they shut down the update channel to try to suppress leaks.
 
 <h3 align="center">"Virustotal says the safe build/this tool contains wacatac/wacapew/some other trojan"</h3>
-Virustotal/similar AV products are doing behavioral analysis based on what the file does in a vaccuum. "h2m-mod.exe", even the clean version, reaches out to an external server that does not exist anymore (master.h2m-mod.dev update server that got shut down, microsoft/digicert for certificate checking) and modifies registry keys related to the game. My tool reaches out to github/master.iw4.zip to check for updates to the version/fetch servers. These are all necessary things the programs would inherently need to do to fulfill their intended purposes and will trigger false positives in behavioral testing as these executables are either unsigned or self-signed meaning they have no inherent trust from any platform.  
+Virustotal/similar AV products are doing behavioral analysis based on what the file does in a vaccuum. 
+
+<h6>"h2m-mod.exe", even the clean version, reaches out to an external server that does not exist anymore (master.h2m-mod.dev update server that got shut down), digitcert/various microsoft domains (ex:live.com, msidentitiy.com, msedge.net) to validate signatures and certificates, and discord for early access DRM (whitelisting was done via discord usernames). It also modifies registry keys related to the game. </h6>
+
+<h6>My tool reaches out to github/master.iw4.zip to check for updates to the version/fetch servers. </h6>
+
+These are all necessary things the programs would inherently need to do to fulfill their intended purposes and will trigger false positives in behavioral testing as these executables are either unsigned or self-signed meaning they have no inherent trust from any platform.  
 
 <h3 align="center">"I got my exe from __________'s server, who are the new official team for H2M"</h3>
 <p>There is no new "official" team for H2M, just collectives of various random people trying to fill the vacuum that was made after the team disbanded. These are often loosely formed groups scrambling to establish themselves as fast as possible. Some of them are probably legitimately trying to build on the project, some of them also see a free program with no official distribution channel that a ton of people want and will take advantage of that; both are equally likely with any tampered build you download. </p>
@@ -75,3 +81,6 @@ Virustotal/similar AV products are doing behavioral analysis based on what the f
 
 <h3 align="center">"I try to connect to a server but it says it's full/it puts me some other random server"</h3>
 People are joining and filling up servers a lot faster than the game itself seems to be able to visibly update the list. Combine that with the fact that the browser itself currently only displays 100 servers at a time and that's going to happen sometimes. 
+
+<h3 align="center">"My server list is empty"</h3>
+Source from favorites instead of internet
