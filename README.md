@@ -21,9 +21,14 @@ Run it instead of the h2m-mod.exe if you always want your servers updated.
 # What it actually does
 The H2M.exe tool reaches out to github to make sure it's the latest version of itself, then validates the hash of your binary. 
 
-    SAFE: You have the last offical binary that was given to early access participants, this should end in (e33e) and if you're on it you have nothing to worry about at least in terms of your binary
-    OLDER: You have the build from before the final day of the early access that was a part of the first leak, this should end in (e127) and isn't malicious as far as I know; just outdated
-    UNKNOWN: You have some random build that someone from a discord server probably told you has a server browser modded into it. This could contain literally anything and you probably shouldn't run it. This tool fetches servers on startup and completely side steps the need for any modification to the binary to achieve this. Delete whatever you have and use this instead unless you REALLY trust whoever made it and gave it to you.
+    SAFE: 
+You have the last offical binary that was given to early access participants, this should end in (e33e) and if you're on it you have nothing to worry about at least in terms of your binary
+
+    OLDER: 
+You have the build from before the final day of the early access that was a part of the first leak, this should end in (e127) and isn't malicious as far as I know; just outdated
+
+    UNKNOWN: 
+You have some random build that someone from a discord server probably told you has a server browser modded into it. This could contain literally anything and you probably shouldn't run it. This tool fetches servers on startup and completely side steps the need for any modification to the binary to achieve this. Delete whatever you have and use this instead unless you REALLY trust whoever made it and gave it to you.
 
 The tool then fetches the latest server list available at [master.iw4.zip](https://master.iw4.zip/servers) and writes them to the favorites.json located in your player folder that can be viewed in the client by clicking "Filter Servers" to set your source to "Favorites". If you're seeing 0 Players and 0 Servers online with your source set to "Internet", good, you're not supposed to.
 
@@ -55,4 +60,11 @@ No, you're probably fine. Would get the new one if you can. And I have no idea e
 Virustotal/similar AV products are doing behavioral analysis based on what the file does in a vaccuum. "h2m-mod.exe", even the clean version, reaches out to an external server that does not exist anymore (the h2m-mod.dev update server that got shut down) and modifies registry keys related to the game. My tool reaches out to github/master.iw4.zip to check for updates to the version/fetch servers. These are all necessary things the programs would inherently need to do to fulfill their intended purposes and will trigger false positives in behavioral testing as these executables are either unsigned or self-signed meaning they have no inherent trust from any platform.  
 
     "I got my exe from __________'s server, who are the new official team for H2M"
-There is no new "official" team for H2M, just collectives of various random people trying to fill the vacuum that was made after the team disbanded. These are often loosely formed groups scrambling to establish themselves as fast as possible. Some of them are probably legitimately trying to build on the project, some of them also see a free program with no official distribution channel that a ton of people want and will take advantage of that; both are equally likely with any tampered build you download. The purpose of this tool is to provide the functionality those builds are offering without the need to actually modify the binary itself so there's no need to ever question what you're actually running. I can't speak on any of their builds and there are [known examples](https://x.com/LeafFGC/status/1824708025908859063) of infected files going around. Until this whole the stabilizes, I wouldn't recommend running any of them and just asking them for the early access version they built off of.
+There is no new "official" team for H2M, just collectives of various random people trying to fill the vacuum that was made after the team disbanded. These are often loosely formed groups scrambling to establish themselves as fast as possible. Some of them are probably legitimately trying to build on the project, some of them also see a free program with no official distribution channel that a ton of people want and will take advantage of that; both are equally likely with any tampered build you download. 
+
+The purpose of this tool is to providea the functionality those builds are offering without the need to actually modify the binary itself so no trust in an outside party is required and there's never a question as to what you're actually running. As of right now, there is no reason to use a tampered binary over a clean one with this tool. 
+
+I can't speak on any of their builds and there are [known examples](https://x.com/LeafFGC/status/1824708025908859063) of infected files going around. Until this whole the stabilizes, I wouldn't recommend running any of them and just asking them for the early access version they built off of.
+
+    I try to connect to a server but it says it's full/it puts me some other random server
+People are joining and filling up servers a lot faster than the game itself seems to be able to visibly update the list. Combine that with the fact that the browser itself currently only displays 100 servers at a time and that's going to happen sometimes. 
