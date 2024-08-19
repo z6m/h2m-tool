@@ -33,7 +33,7 @@ The H2M.exe tool reaches out to github to make sure it's the latest version of i
 
 The tool then fetches the latest server list available at [master.iw4.zip](https://master.iw4.zip/servers) and writes them to the favorites.json located in your player folder that can be viewed in the client by clicking "Filter Servers" to set your source to "Favorites". If you're seeing 0 Players and 0 Servers online with your source set to "Internet", good, you're not supposed to.
 
-Upon finishing these two tasks, the tool will run your h2m-mod.exe as normal and close itself. It doesn't need to install anything, run in the background, or act as a replacement for/interact with any game files in any way (meaning if anything breaks after it closes itself, that's on whatever you've got going on). For anyone just skimming this:
+Upon finishing these two tasks, the tool will run your h2m-mod.exe as normal and close itself. It doesn't need to install anything, run in the background, or act as a replacement for/interact with any game files in any way (meaning if anything breaks after it closes itself, that's on whatever you've got going on). I'll repeat that for anyone just skimming this:
 
 <h2 align="center">ANY ERRORS/ISSUES YOU EXPERIENCE AFTER YOUR GAME STARTS ARE IN THE GAME ITSELF, NOT THIS TOOL.</h3>
 
