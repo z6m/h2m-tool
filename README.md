@@ -55,7 +55,7 @@ The game itself only lets you have 100 servers visible in the browser, even when
 No, this tool is for validation and easy access to a "functioning" server list without modifying any original binaries. This repo contains no copyrighted assets and is purely code written by its contributor(s).
 
 <h3 align="center">"Will YOU give me mod files?"</h3>
-<p>No, I would much rather be able to continue helping people without risking getting any of my stuff suspended or getting a C&D of my own and being legally prevented from doing so. I have only ever directly given out mod files before the C&D to my fellow early access gamers or to the people helping me with security research.</p>
+<p>Probably not. I would much rather be able to continue helping people without risking getting any of my stuff suspended or getting a C&D of my own and being legally prevented from doing so (especially with the reason the h2m-mod team cited for the C&D being the upcoming release of BO6, I'm at least not gonna market myself as a source for them). I have only directly given out mod files to my fellow early access gamers or to the people helping me with security research.</p>
 
 <p>That said, you can probably find that exact stuff floating around somewhere. It's a 2.2-2.4gb zip with no maps included, contains "h2m-mod.exe", "h1_mp64_ship.exe", and the "h2m-mod" folder; that's it. Might even have my name in the game logs from when I was playing during early access, hash ends in e33e, check the hashes before running any executable. Game files you'll need to get elsewhere, preferably legally.</p>
 
