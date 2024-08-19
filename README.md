@@ -33,7 +33,9 @@ The H2M.exe tool reaches out to github to make sure it's the latest version of i
 
 The tool then fetches the latest server list available at [master.iw4.zip](https://master.iw4.zip/servers) and writes them to the favorites.json located in your player folder that can be viewed in the client by clicking "Filter Servers" to set your source to "Favorites". If you're seeing 0 Players and 0 Servers online with your source set to "Internet", good, you're not supposed to.
 
-Upon finishing these two tasks, the tool will run your h2m-mod.exe as normal and close itself. It doesn't need to install anything, run in the background, or act as a replacement for/interact with any game files in any way (meaning if anything breaks after it closes itself, that's on whatever you've got going on). 
+Upon finishing these two tasks, the tool will run your h2m-mod.exe as normal and close itself. It doesn't need to install anything, run in the background, or act as a replacement for/interact with any game files in any way (meaning if anything breaks after it closes itself, that's on whatever you've got going on). For anyone just skimming this:
+
+<h2 align="center">ANY ERRORS/ISSUES YOU EXPERIENCE AFTER YOUR GAME STARTS ARE IN THE GAME ITSELF, NOT THIS TOOL.</h3>
 
 # Compiling from source
 While the releases are binaries that have been precompiled so they require no outside installs and can be ran on any machine with no technical knowledge required, this is still an open source project. If you don't trust the precompiled binaries, I added a .bat file that will let you easily clone the repo and compile it yourself to make sure the code you're seeing is the code that's running on your machine (you'll obviously need to install python as well as any dependancies yourself). If you're on Linux (I saw you, Steamdeck users) and managed to get h2m working, I trust that you probably know how to run a python script and don't need anything compiled at all.
@@ -81,7 +83,7 @@ These are all necessary things the programs would inherently need to do to fulfi
 <p>I can't speak on any of their builds and there are known examples (https://x.com/LeafFGC/status/1824708025908859063) of infected files going around. Until this whole the stabilizes, I wouldn't recommend running any of them and just asking them for the early access version they built off of.</p>
 
 <h3 align="center">"I try to connect to a server but it says it's full/it puts me some other random server"</h3>
-People are joining and filling up servers a lot faster than the game itself seems to be able to visibly update the list. Combine that with the fact that the browser itself currently only displays 100 servers at a time and that's going to happen sometimes. 
+People are joining and filling up servers a lot faster than the game itself seems to be able to visibly update the list. Combine that with the fact that the browser itself currently only displays 100 servers at a time and that's going to happen sometimes. Refresh often when you're looking at the list.
 
 <h3 align="center">"My server list is empty"</h3>
 Make sure you ran the mod from my tool and not the h2m-mod.exe, set your source to favorites instead of internet. If you get an error fetching servers message you're probably being rate limited from all the scraping. Take a break or make your own favourites.json then try again later.
