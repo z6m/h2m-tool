@@ -32,5 +32,27 @@ Upon finishing these two tasks, the tool will run your h2m-mod.exe as normal and
 # Compiling from source
 While the releases are binaries that have been precompiled so they require no outside installs and can be ran on any machine with no technical knowledge required, this is still an open source project. If you don't trust the precompiled binaries, I added a .bat file that will let you easily clone the repo and compile it yourself to make sure the code you're seeing is the code that's running on your machine (you'll obviously need to install python as well as any dependancies yourself). If you're on Linux (I saw you, Steamdeck users) and managed to get h2m working, I trust that you probably know how to run a python script and don't need anything compiled at all.
 
-# Other stuff worth noting
-The game itself only lets you have 100 servers marked as "favorites" at a time. The tool can scrape and save way more than that, they just won't show up until you delete something (F1/Y/Triangle while hovering over a server). If you're just browsing and don't have something to directly connect to already, you can make space by sorting by ping and just deleting anything that's unplayably high.
+# Known issues
+The game itself only lets you have 100 servers visible in the browser, even when the source is set to internet. This seems to just be an MWR thing
+
+    Solution: planning to refactor the script to pull the top 100 servers with the best ping
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# FAQ regarding H2M itself
+
+    "Will this tool give me the mod files?"
+No, this tool is for validation and easy access to a "functioning" server list without modifying any original binaries. This repo contains no copyrighted assets and is purely code written by its contributor(s).
+
+    "Will YOU give me mod files?"
+No, I would much rather be able to continue helping people without risking getting any of my stuff suspended or getting a C&D of my own and being legally prevented from doing so. I have only ever directly given out mod files before the C&D to my fellow early access gamers or to the people helping me with security research. You can probably find that stuff floating around somewhere. It's a 2.2-2.4gb zip with no maps included, might even have my name in the game logs from when I was playing during early access, hash ends in e33e, check the hashes before running any executable.
+
+    "I have the old build, am I cooked? What features am I missing?"
+No, you're probably fine. Would get the new one if you can. And I have no idea exactly what features are missing; I wasn't on the H2M team itself, hence why I'm able to talk about it and help people. The mod was recieveing multiple updates throughout the day involving tweaks to game feel (particularly regarding glides, catwalks, and other associated mechanics). I have no way of knowing exactly what was in each individual build, I just happened to catch the latest one before they shut down the update channel to try to suppress leaks. 
+
+    "Virustotal says the safe build/this tool contains wacatac/wacapew/some other trojan"
+Virustotal/similar AV products are doing behavioral analysis based on what the file does in a vaccuum. "h2m-mod.exe", even the clean version, reaches out to an external server that does not exist anymore (the h2m-mod.dev update server that got shut down) and modifies registry keys related to the game. My tool reaches out to github/master.iw4.zip to check for updates to the version/fetch servers. These are all necessary things the programs would inherently need to do to fulfill their intended purposes and will trigger false positives in behavioral testing as these executables are either unsigned or self-signed meaning they have no inherent trust from any platform.  
+
+    "I got my exe from __________'s server, who are the new official team for H2M"
+There is no new "official" team for H2M, just collectives of various random people trying to fill the vacuum that was made after the team disbanded. These are often loosely formed groups scrambling to establish themselves as fast as possible. Some of them are probably legitimately trying to build on the project, some of them also see a free program with no official distribution channel that a ton of people want and will take advantage of that; both are equally likely with any tampered build you download. The purpose of this tool is to provide the functionality those builds are offering without the need to actually modify the binary itself so there's no need to ever question what you're actually running. I can't speak on any of their builds and there are [known examples](https://x.com/LeafFGC/status/1824708025908859063) of infected files going around. Until this whole the stabilizes, I wouldn't recommend running any of them and just asking them for the early access version they built off of.
