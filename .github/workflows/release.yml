@@ -4,20 +4,20 @@ on:
   push:
     branches:
       - "main"
-  pull_request:
-    branches:
-      - "main"
-    types:
-      - "closed"
   workflow_dispatch:
 
 jobs:
-  build:
+  create-release:
+    permissions:
+      contents: write
+
     name: Build Binary
     runs-on: windows-2022
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -29,15 +29,71 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Build Executable
-        run: pyinstaller  --collect-all pyfiglet -i "logo.ico" -n H2M --onefile h2m-tool.py
+        run: pyinstaller --collect-all pyfiglet -i "icon.ico" -n H2M --onefile h2m-tool.py
+
+      - name: Get the Most Recent Tag and Increment Version
+        id: get_tag
+        shell: powershell
+        run: |
+          $tag = git describe --tags --abbrev=0 2>$null
+          if (-not $tag) {
+            $tag = "v0.0.0"
+          }
+
+          if ($tag -match '^v(\d+)\.(\d+)\.(\d+)$') {
+            $major = [int]$matches[1]
+            $minor = [int]$matches[2]
+            $patch = [int]$matches[3]
+          } else {
+            Write-Host "Tag does not match semantic versioning. Defaulting to v0.0.0."
+            $major = 0
+            $minor = 0
+            $patch = 0
+          }
+
+          $patch += 1
+          $newTag = "v$major.$minor.$patch"
+
+          echo "LATEST_TAG=$tag" >> $env:GITHUB_ENV
+          echo "NEW_TAG=$newTag" >> $env:GITHUB_ENV
 
       - name: Commit short hash
         id: vars
+        shell: powershell
         run: |
-          echo "SHORT_COMMIT_ID=$(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
+          $shortCommitId = git rev-parse --short HEAD
+          echo "SHORT_COMMIT_ID=$shortCommitId" >> $env:GITHUB_OUTPUT
+
+      - name: Generate SHA-256 Hash
+        id: sha256
+        shell: powershell
+        run: |
+          $hash = Get-FileHash -Path "dist/H2M.exe" -Algorithm SHA256
+          echo "SHA256_HASH=$($hash.Hash)" >> $env:GITHUB_OUTPUT
+
+      - name: Create GitHub Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ env.NEW_TAG }}
+          release_name: Release ${{ env.NEW_TAG }}
+          draft: false
+          prerelease: false
+          body: |
+            ### SHA-256 Checksum
+            ```
+            ${{ steps.sha256.outputs.SHA256_HASH }}
+            ```
+          generate_release_notes: true
 
       - name: Upload Release Asset
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          name: H2M-:${{ steps.vars.outputs.SHORT_COMMIT_ID }}.exe
-          path: dist/H2M.exe
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: dist/H2M.exe
+          asset_name: H2M.exe
+          asset_content_type: application/octet-stream
