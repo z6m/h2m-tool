@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - "main"
+    paths:
+      - "h2m-tool.py"
   workflow_dispatch:
 
 jobs:
@@ -22,14 +24,14 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.10"
+          python-version: "3.12.4"
           cache: "pip"
 
       - name: Install Dependencies
         run: pip install -r requirements.txt
 
       - name: Build Executable
-        run: pyinstaller --collect-all pyfiglet -i "icon.ico" -n H2M --onefile h2m-tool.py
+        run: pyinstaller --collect-all pyfiglet -i "icon.ico" -n H2M-Tool --onefile h2m-tool.py
 
       - name: Get the Most Recent Tag and Increment Version
         id: get_tag
@@ -68,7 +70,7 @@ jobs:
         id: sha256
         shell: powershell
         run: |
-          $hash = Get-FileHash -Path "dist/H2M.exe" -Algorithm SHA256
+          $hash = Get-FileHash -Path "dist/H2M-Tool.exe" -Algorithm SHA256
           echo "SHA256_HASH=$($hash.Hash)" >> $env:GITHUB_OUTPUT
 
       - name: Create GitHub Release
@@ -78,7 +80,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ env.NEW_TAG }}
-          release_name: Release ${{ env.NEW_TAG }}
+          release_name: ${{ env.NEW_TAG }} Edition
           draft: false
           prerelease: false
           body: |
