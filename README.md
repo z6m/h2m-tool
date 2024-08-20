@@ -82,6 +82,8 @@ These are all necessary things the programs would inherently need to do to fulfi
 
 <p>I can't speak on any of their builds and there are <a href="https://twitter.com/LeafFGC/status/1824708025908859063">known examples</a> of infected files going around. Until this whole the stabilizes, I wouldn't recommend running any of them and just asking them for the early access version they built off of. Also won't be adding random builds as trusted hashes since I want no responsibility for anything that might be in them. They'll usually sell you on having a built-in server browser so, if you genuinely trust one of those, you have no reason to be using this tool anyway.</p>
 
+<h6>Not really worth its own section but will throw in "Virustotal said this unknown build is safe so it can't be a virus". These are recently made files claiming to be what was originally intended to be a game mod. Online sandboxes can easily be fooled even if the author knew nothing about sandbox detetction if they have the sense to put some logic in their malware that does something like check to see if the game files actually exist in its directory before doing anything that would get them flagged. A clean virustotal scan doesn't really mean anything in this context.</h6>
+
 <h3 align="center">"I try to connect to a server but it says it's full/it puts me some other random server"</h3>
 People are joining and filling up servers a lot faster than the game itself seems to be able to visibly update the list. Combine that with the fact that the browser itself currently only displays 100 servers at a time and that's going to happen sometimes. Refresh often when you're looking at the list.
 
