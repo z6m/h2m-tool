@@ -39,7 +39,7 @@ jobs:
         run: |
           $tag = git describe --tags --abbrev=0 2>$null
           if (-not $tag) {
-            $tag = "v0.0.0"
+            $tag = "v1.1.0"
           }
 
           if ($tag -match '^v(\d+)\.(\d+)\.(\d+)$') {
@@ -47,9 +47,9 @@ jobs:
             $minor = [int]$matches[2]
             $patch = [int]$matches[3]
           } else {
-            Write-Host "Tag does not match semantic versioning. Defaulting to v0.0.0."
-            $major = 0
-            $minor = 0
+            Write-Host "Tag does not match semantic versioning. Defaulting to v1.1.0."
+            $major = 1
+            $minor = 1
             $patch = 0
           }
 
