@@ -80,7 +80,7 @@ These are all necessary things the programs would inherently need to do to fulfi
 
 <h6>The purpose of this tool is to provide the functionality those builds are offering without the need to actually modify the binary itself so no trust in an outside party is required and there's never a question as to what you're actually running. As of right now, there is no reason to use a tampered binary over a clean one with this tool. </h6>
 
-<p>I can't speak on any of their builds and there are known examples (https://x.com/LeafFGC/status/1824708025908859063) of infected files going around. Until this whole the stabilizes, I wouldn't recommend running any of them and just asking them for the early access version they built off of.</p>
+<p>I can't speak on any of their builds and there are known examples (https://x.com/LeafFGC/status/1824708025908859063) of infected files going around. Until this whole the stabilizes, I wouldn't recommend running any of them and just asking them for the early access version they built off of. Also won't be adding random builds as trusted hashes since I want no responsibility for anything that might be in them. They'll usually sell you on having a built-in server browser so, if you genuinely trust one of those, you have no reason to be using this tool anyway.</p>
 
 <h3 align="center">"I try to connect to a server but it says it's full/it puts me some other random server"</h3>
 People are joining and filling up servers a lot faster than the game itself seems to be able to visibly update the list. Combine that with the fact that the browser itself currently only displays 100 servers at a time and that's going to happen sometimes. Refresh often when you're looking at the list.
