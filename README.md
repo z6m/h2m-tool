@@ -35,16 +35,13 @@ The tool then fetches the latest server list available at [master.iw4.zip](https
 
 Upon finishing these two tasks, the tool will run your h2m-mod.exe as normal and close itself. It doesn't need to install anything, run in the background, or act as a replacement for/interact with any game files in any way (meaning if anything breaks after it closes itself, that's on whatever you've got going on). I'll repeat that a little louder for anyone just skimming this,
 
-<h2 align="center">ANY ERRORS/ISSUES YOU EXPERIENCE AFTER YOUR GAME STARTS ARE IN THE GAME ITSELF, NOT THIS TOOL.</h3>
+<h2 align="center">ANY ERRORS/ISSUES YOU EXPERIENCE AFTER YOUR GAME STARTS ARE IN THE GAME ITSELF, NOT THIS TOOL. THIS INCLUDES THE SERVER BROWSER.</h3>
 
 # Compiling from source
 While the releases are binaries that have been precompiled so they require no outside installs and can be ran on any machine with no technical knowledge required, this is still an open source project. If you don't trust the precompiled binaries, I added a .bat file that will let you easily clone the repo and compile it yourself to make sure the code you're seeing is the code that's running on your machine (you'll obviously need to install python as well as any dependancies yourself). If you're on Linux (I saw you, Steamdeck users) and managed to get h2m working, I trust that you probably know how to run a python script and don't need anything compiled at all.
 
 # Known issues
-The game itself only lets you have 100 servers visible in the browser, even when the source is set to internet. This seems to just be an MWR thing
-
-    Short-Term Solution: Sort by ping, go to the bottom, start deleting high-ping favorites and watch the new servers come in
-    Long-Term Solution: planning to refactor the script to pull the top 100 servers with the best ping
+Turns out the server browser has neat quirk where, if you go too long without refreshing, the server list will update the backend but not the front end to reflect it, which was why people were getting into different servers than the one they clicked. Gonna work on having a companion GUI built into this tool that shows real-time server information and you can one click copy/paste IPs directly into your console to connect, as well as maybe some other useful features. Until then, don't stay on the server list for too long without refreshing it and you'll be fine.
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -84,8 +81,8 @@ These are all necessary things the programs would inherently need to do to fulfi
 
 <h6>Not really worth its own section but will throw in "Virustotal said this unknown build is safe so it can't be a virus". These are recently made files claiming to be what was originally intended to be a game mod. Online sandboxes can easily be fooled even if the author knew nothing about sandbox detetction if they have the sense to put some logic in their malware that does something like check to see if the game files actually exist in its directory before doing anything that would get them flagged. A clean virustotal scan doesn't really mean anything in this context.</h6>
 
-<h3 align="center">"I try to connect to a server but it says it's full/it puts me some other random server"</h3>
-People are joining and filling up servers a lot faster than the game itself seems to be able to visibly update the list. Combine that with the fact that the browser itself currently only displays 100 servers at a time and that's going to happen sometimes. Refresh often when you're looking at the list.
+<h3 align="center">"I try to connect to a server but it says it's full/it puts me some random server instead of the one I picked"</h3>
+People are joining and filling up servers faster than the game itself seems to be able to visibly update the list. Refresh often when you're looking at the list or else the front-end will desync from the bank-end. Wasn't me, I didn't do that.
 
 <h3 align="center">"My server list is empty"</h3>
 Make sure you ran the mod from my tool and not the h2m-mod.exe, set your source to favorites instead of internet. If you get an error fetching servers message you're probably being rate limited from all the scraping. Take a break or make your own favourites.json then try again later.
