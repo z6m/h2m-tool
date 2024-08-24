@@ -63,10 +63,10 @@ No, this tool is for validation and easy access to a "functioning" server list w
 <h3 align="center">"I have the old build, am I cooked? What features am I missing?"</h3>
 No, you're probably fine. Would get the new one if you can. And I have no idea exactly what features are missing; I wasn't on the H2M team itself, hence why I'm able to talk about it and help people. The mod was recieveing multiple updates throughout the day involving tweaks to game feel (particularly regarding glides, catwalks, and other associated mechanics). I have no way of knowing exactly what was in each individual build, I just happened to catch the latest one before they shut down the update channel to try to suppress leaks.
 
-<h3 align="center">"Virustotal says the safe build/this tool contains wacatac/wacapew/some other trojan"</h3>
-Virustotal/similar AV products are doing behavioral analysis based on what the file does in a vaccuum. 
+<h3 align="center">"Virustotal says the safe build/this tool contains gamehack/wacatac/wacapew/some other trojan"</h3>
+Virustotal/similar AV products are doing behavioral analysis based on what the file does in a vaccuum. Some AV software will even flag game mods in general under the "gamehack" tag. The more it's scanned and flagged as potentially dangerous, the more AV vendors will record the hash of the file in their databases and just flag it for that reason as well. This means absolutely nothing without looking into the behavior of whatever binary you're looking at. 
 
-<h6>"h2m-mod.exe", even the clean version, reaches out to an external server that does not exist anymore (master.h2m-mod.dev update server that got shut down), digitcert/various microsoft domains (ex:live.com, msidentitiy.com, msedge.net) to validate signatures and certificates, and discord for early access DRM (whitelisting was done via discord usernames). It also modifies registry keys related to the game. </h6>
+<h6>"h2m-mod.exe", even the clean version, reaches out to an external server that does not exist anymore (master.h2m-mod.dev update server that got shut down), demonware (actvision's in-house online gaming platform), digitcert/various microsoft domains (ex:live.com, msidentitiy.com, msedge.net) to validate signatures and certificates, and discord for the verification clantags (verified users, h2m devs, etc. seems to be done via discord). It also modifies registry keys related to the game. </h6>
 
 <h6>My tool reaches out to github/master.iw4.zip to check for updates to the version/fetch servers. </h6>
 
