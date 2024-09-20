@@ -1,6 +1,8 @@
-aioping==0.4.0
 beautifulsoup4==4.12.3
 colorama==0.4.6
+customtkinter==5.2.2
 pyfiglet==1.0.2
+pyperclip==1.9.0
 pyinstaller==6.10.0
 Requests==2.32.3
+setuptools==74.1.2
