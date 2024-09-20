@@ -1,12 +1,6 @@
 name: Build and Release
 
-on:
-  push:
-    branches:
-      - "main"
-    paths:
-      - "h2m-tool.py"
-  workflow_dispatch:
+on: workflow_dispatch
 
 jobs:
   create-release:
