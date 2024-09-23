@@ -6,12 +6,13 @@ import customtkinter as ctk
 import pyperclip  
 import random
 import pkg_resources
+import threading
 
 class gui(ctk.CTk):
     def __init__(self):
         super().__init__()
 
-        # --------------------------------- Window -------------------------------
+# --------------------------------- Window -------------------------------
         ctk.set_appearance_mode("dark")
         ctk.set_default_color_theme("green")
 
@@ -23,8 +24,12 @@ class gui(ctk.CTk):
         self.filter_category = 'Show All'
         self.filter_regions = set()
         self.search_query = ""
+        
+        # Player/server count stuff
+        self.total_servers = 0
+        self.total_players = 0
 
-        # -------------------------------- Functions -----------------------------
+# -------------------------------- Functions -----------------------------
 
         def notify(notification):
             self.notifier.configure(text=notification)
@@ -39,6 +44,12 @@ class gui(ctk.CTk):
                 notify("Servers.json not found, try refreshing")
                 return []  
 
+        def update_server_player_count(server_data):
+            self.total_servers = len(server_data)
+            self.total_players = sum(int(str(server.get('players', '0')).split('/')[0]) if 'players' in server else 0 for server in server_data)
+            count_text = f"Total Servers: {self.total_servers} // Total Players: {self.total_players}"
+            self.label_count.configure(text=count_text)
+
         def update_treeview(server_data):
             tv.delete(*tv.get_children())
             for server in server_data:
@@ -50,9 +61,10 @@ class gui(ctk.CTk):
                     server.get('category', ''), 
                     f"{server.get('players', '')}/{server.get('maxplayers', '')}"
                 ), tags=(server.get('ip', ''),))
+            update_server_player_count(server_data)
             for col in tv.cget('columns'):
                 tv.heading(col, command=lambda _col=col: sort_treeview(tv, _col, False))
-                
+
         def update_with_filters():
             server_data = read_server_data()
             filtered_data = apply_filters(server_data)
@@ -80,9 +92,13 @@ class gui(ctk.CTk):
             return filtered_data
 
         def refresh():
-            h2m.fetch_servers()
-            update_with_filters
-            notify('Servers refreshed')
+            def fetch_and_update():
+                h2m.fetch_servers()  # Fetch servers
+                self.after(0, update_with_filters)  # Update filters after fetching
+                self.after(0, lambda: notify('Servers refreshed'))  # Notify after updating
+
+            # Run fetch_and_update in a separate thread
+            threading.Thread(target=fetch_and_update).start()
 
         def filter_category(category_name=None):
             self.filter_category = category_name
@@ -192,12 +208,12 @@ class gui(ctk.CTk):
             else:
                 notify("No servers available for matchmaking")
 
-        # -------------------------------- Elements ------------------------------
-        # Tabviewer (tabs)
+# -------------------------------- Elements ------------------------------
+    # Tabviewer (tabs)
         self.tabview = ctk.CTkTabview(self, anchor='w')
         self.tabview.pack(fill='both', expand=True)
 
-        # Server Browser Tab
+    # Server Browser Tab
         self.tab_main = self.tabview.add("Server Browser")
 
         # First Row Frame
@@ -343,15 +359,14 @@ class gui(ctk.CTk):
         tv.bind("<ButtonRelease-1>", on_item_leftclick)
         tv.bind("<Button-3>", show_context_menu)
 
-        # Initial Load
-        update_treeview(read_server_data())
-
-        # Plugins Tab
+    # Plugins Tab
+        '''
         self.tab_plugins = self.tabview.add("Plugins")
         label_plugins = ctk.CTkLabel(self.tab_plugins, text="Plugin loader coming soon(ish)")
         label_plugins.pack(padx=10, pady=10)
+        '''
 
-        # About Tab
+    # About Tab
         self.tab_about = self.tabview.add("About")
         label_about_heading = ctk.CTkLabel(self.tab_about, font=('systemui', 18, UNDERLINE), text="What Everything Does")
         label_about_heading.pack(padx=10, pady=10, fill='x')
@@ -377,14 +392,21 @@ class gui(ctk.CTk):
             text= "if something bugs out yell at me on twitter @zomm\n(unless it's a virustotal screenshot)")
         label_about2.pack(anchor='s')
 
-        # Notifier
+    # Notifier
         frame_bottom = ctk.CTkFrame(self)
         frame_bottom.pack(fill='x')
         self.notifier = ctk.CTkLabel(frame_bottom, text=f"", text_color="white")
         self.notifier.pack(side='left', fill='x', padx=14)
         
-        self.version = ctk.CTkLabel(frame_bottom, text=f"{h2m.version_tag}", text_color="white")
+        # Server/Player Count
+        self.version = ctk.CTkLabel(frame_bottom, text=f"[ {h2m.version_tag} ]", text_color="white")
         self.version.pack(side='right', fill='x', padx=14)
+        
+        self.label_count = ctk.CTkLabel(frame_bottom, text="", text_color="white")
+        self.label_count.pack(side='right', fill='x', padx=12)
+
+        # Initial Load
+        update_treeview(read_server_data())
 
 if __name__ == "__main__":
     server_browser = gui()

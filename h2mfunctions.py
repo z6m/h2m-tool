@@ -3,6 +3,7 @@ import json
 import bs4
 import pyfiglet
 import hashlib
+import re
 from colorama import Fore, Style
 from colorama.ansi import Back
 
@@ -116,7 +117,9 @@ def fetch_servers():
             }
             region = ""
             for key in region_map:
-                if key in name:
+                # Create a regex pattern to match the key as a whole word
+                pattern = r'\b' + re.escape(key) + r'\b'
+                if re.search(pattern, name):
                     region = region_map[key]
                     break
                 
